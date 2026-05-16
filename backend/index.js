@@ -10,9 +10,14 @@ dotenv.config();
 const app = express();
 
 //middlewares
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://resume-ats-analyzer-three.vercel.app"
+];
+
 app.use(cors({
-    origin:"http://localhost:3000",
-    credentials:true, 
+  origin: allowedOrigins,
+  credentials: true
 }));
 app.use(express.json());
 
